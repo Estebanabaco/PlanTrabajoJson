@@ -1,0 +1,282 @@
+{
+  "ultimaActualizacion": "2025-09-03T18:23:31.996Z",
+  "proyectos": [
+    {
+      "idProyecto": "25P01",
+      "nombreProyecto": "Sir Abaco",
+      "etapaActual": "Metano",
+      "estadoGeneral": "En proceso",
+      "etapas": [
+        {
+          "idEtapa": "25P01T01",
+          "nombreEtapa": "Metano",
+          "areaResponsable": "Tecnica",
+          "liderResponsable": "Diana Henao",
+          "estadoEtapa": "En proceso",
+          "notas": "",
+          "tareas": [
+            {
+              "idTarea": "25P01T01T01",
+              "descripcion": "Replicar Ajuste Cali",
+              "estimacionDias": 0.3,
+              "estado": "En proceso",
+              "fechaEntrega": "2025-09-03",
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P01T01T02",
+              "descripcion": "Replicar Ajuste Pasto",
+              "estimacionDias": 0.3,
+              "estado": "En proceso",
+              "fechaEntrega": "2025-09-03",
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P01T01T03",
+              "descripcion": "Replicar Ajuste Pereira",
+              "estimacionDias": 0.3,
+              "estado": "En proceso",
+              "fechaEntrega": "2025-09-03",
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P01T01T04",
+              "descripcion": "Replicar Ajuste Cucuta",
+              "estimacionDias": 0.3,
+              "estado": "En proceso",
+              "fechaEntrega": "2025-09-04",
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P01T01T07",
+              "descripcion": "Replicar Ajuste Manizales",
+              "estimacionDias": 0.3,
+              "estado": "En proceso",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P01T01T08",
+              "descripcion": "Replicar Ajuste Zipaquira",
+              "estimacionDias": 0.3,
+              "estado": "En proceso",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P01T01T09",
+              "descripcion": "Replicar Ajuste Cartagena",
+              "estimacionDias": 0.3,
+              "estado": "En proceso",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P01T01T10",
+              "descripcion": "Replicar Ajuste Santa Marta",
+              "estimacionDias": 0.3,
+              "estado": "En proceso",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P01T01T11",
+              "descripcion": "Replicar Ajuste Medellín",
+              "estimacionDias": 0.3,
+              "estado": "En proceso",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P01T01T12",
+              "descripcion": "Replicar Ajuste Armenia",
+              "estimacionDias": 0.3,
+              "estado": "En proceso",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P01T01T13",
+              "descripcion": "Replicar Ajuste Neiva",
+              "estimacionDias": 0.3,
+              "estado": "En proceso",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P01T01T14",
+              "descripcion": "Replicar Ajuste Barranquilla",
+              "estimacionDias": 0.3,
+              "estado": "En proceso",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P01T01T15",
+              "descripcion": "Replicar Ajuste Cartago",
+              "estimacionDias": 0.3,
+              "estado": "En proceso",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P01T01T16",
+              "descripcion": "Replicar Ajuste San Andres",
+              "estimacionDias": 0.3,
+              "estado": "En proceso",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P01T01T17",
+              "descripcion": "Crear Nuevo Banco Saciar",
+              "estimacionDias": 1,
+              "estado": "En proceso",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P01T01T18",
+              "descripcion": "Crear Nuevo Banco Uraba",
+              "estimacionDias": 1,
+              "estado": "En proceso",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P01T01T19",
+              "descripcion": "Crear Nuevo Banco Rionegro",
+              "estimacionDias": 1,
+              "estado": "En proceso",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "idProyecto": "25P02",
+      "nombreProyecto": "Visor 360",
+      "etapaActual": "Logistica",
+      "estadoGeneral": "En Proceso",
+      "etapas": [
+        {
+          "idEtapa": "25P02C01",
+          "nombreEtapa": "Logistica",
+          "areaResponsable": "Contable",
+          "liderResponsable": "Ingrid Broun",
+          "estadoEtapa": "FInalizado P Garantia",
+          "notas": "Por vacaciones delego la aprobacion a Eliza",
+          "tareas": [
+            {
+              "idTarea": "25P02C01T05",
+              "descripcion": "Acompañamiento definir necesidad y revisar insumos completos",
+              "estimacionDias": 0.7,
+              "estado": "No iniciado",
+              "fechaEntrega": "2025-09-04",
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            }
+          ]
+        },
+        {
+          "idEtapa": "25P02C01",
+          "nombreEtapa": "Fortalecimiento",
+          "areaResponsable": "Tecnica",
+          "liderResponsable": "Diana Henao",
+          "estadoEtapa": "No iniciado",
+          "notas": "",
+          "tareas": [
+            {
+              "idTarea": "25P02C01T05",
+              "descripcion": "Acompañamiento definir necesidad y revisar insumos completos",
+              "estimacionDias": 0.7,
+              "estado": "No iniciado",
+              "fechaEntrega": "2025-09-04",
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "idProyecto": "25P03",
+      "nombreProyecto": "Sistema de Inventarios",
+      "etapaActual": "Estapa1",
+      "estadoGeneral": "En Proceso",
+      "etapas": [
+        {
+          "idEtapa": "25P03T01",
+          "nombreEtapa": "Etapa1",
+          "areaResponsable": "Tecnica",
+          "liderResponsable": "Diana Henao",
+          "estadoEtapa": "FInalizado P Garantia",
+          "notas": "",
+          "tareas": [
+            {
+              "idTarea": "25P03T01T06",
+              "descripcion": "Preparar Entono para desarrollador",
+              "estimacionDias": 1,
+              "estado": "No iniciado",
+              "fechaEntrega": "2025-09-05",
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            }
+          ]
+        },
+        {
+          "idEtapa": "25P03T02",
+          "nombreEtapa": "Piloto",
+          "areaResponsable": "Tecnica",
+          "liderResponsable": "Diana Henao",
+          "estadoEtapa": "En proceso",
+          "notas": "",
+          "tareas": []
+        }
+      ]
+    },
+    {
+      "idProyecto": "25P04",
+      "nombreProyecto": "IA Alianza",
+      "etapaActual": "Fase2",
+      "estadoGeneral": "En Proceso",
+      "etapas": []
+    },
+    {
+      "idProyecto": "25P05",
+      "nombreProyecto": "Sistema de lectura de correos (Alertas Log)",
+      "etapaActual": "Etapa1",
+      "estadoGeneral": "No Iniciado",
+      "etapas": [
+        {
+          "idEtapa": "25P05T01",
+          "nombreEtapa": "Etapa1",
+          "areaResponsable": "Contable",
+          "liderResponsable": "Ingrid Broun",
+          "estadoEtapa": "No iniciado",
+          "notas": "",
+          "tareas": []
+        }
+      ]
+    }
+  ]
+}
