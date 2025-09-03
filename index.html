@@ -116,40 +116,6 @@
         </div>
     </div>
 
-    <!-- 
-      Aquí incrustamos los datos del JSON directamente.
-    -->
-    <script id="planData" type="application/json">
-    {
-      "ultimaActualizacion": "2025-09-03T17:30:00.000Z",
-      "proyectos": [
-        {
-          "idProyecto": "P001",
-          "nombreProyecto": "Sir Abaco",
-          "etapaActual": "Metano",
-          "estadoGeneral": "En Proceso",
-          "etapas": [
-            {
-              "idEtapa": "P001T01",
-              "nombreEtapa": "Metano",
-              "areaResponsable": "Tecnica",
-              "liderResponsable": "Diana Henao",
-              "estadoEtapa": "En proceso",
-              "notas": "",
-              "tareas": [
-                { "idTarea": "P001T01TT01", "descripcion": "Replicar Ajuste Cali", "estimacionDias": 0.3, "estado": "En proceso", "fechaEntrega": "2025-09-10", "fechaInicialEntrega": "2025-09-10", "diasDesvio": 0 },
-                { "idTarea": "P001T01TT02", "descripcion": "Replicar Ajuste Pasto", "estimacionDias": 0.3, "estado": "En proceso", "fechaEntrega": null, "fechaInicialEntrega": null, "diasDesvio": 0 },
-                { "idTarea": "P001T01TT03", "descripcion": "Crear Nuevo Banco Uraba", "estimacionDias": 1, "estado": "No iniciado", "fechaEntrega": "2025-09-15", "fechaInicialEntrega": "2025-09-12", "diasDesvio": 3 }
-              ]
-            }
-          ]
-        },
-        { "idProyecto": "P002", "nombreProyecto": "Visor 360", "etapaActual": "Logistica", "estadoGeneral": "Finalizado P' Garantia", "etapas": [ { "idEtapa": "P002C01", "nombreEtapa": "Logistica", "areaResponsable": "Contable", "liderResponsable": "Ingrid Broun", "estadoEtapa": "Finalizado P' Garantia", "notas": "Por vacaciones delego la aprobacion a Eliza", "tareas": [ { "idTarea": "P002C01TT01", "descripcion": "Ajuste de reportes", "estimacionDias": 2, "estado": "Finalizado", "fechaEntrega": "2025-08-20", "fechaInicialEntrega": "2025-08-20", "diasDesvio": 0 } ] } ] },
-        { "idProyecto": "P003", "nombreProyecto": "Sistema de Inventarios", "etapaActual": "Piloto", "estadoGeneral": "En Proceso", "etapas": [ { "idEtapa": "P003T01", "nombreEtapa": "Etapa1", "areaResponsable": "Tecnica", "liderResponsable": "Diana Henao", "estadoEtapa": "Finalizado P' Garantia", "notas": "", "tareas": [] }, { "idEtapa": "P003T02", "nombreEtapa": "Piloto", "areaResponsable": "Tecnica", "liderResponsable": "Diana Henao", "estadoEtapa": "En proceso", "notas": "", "tareas": [ { "idTarea": "P003T02TT01", "descripcion": "Preparar Entorno para desarrollo", "estimacionDias": 1, "estado": "No iniciado", "fechaEntrega": null, "fechaInicialEntrega": null, "diasDesvio": 0 } ] } ] }
-      ]
-    }
-    </script>
-
     <script>
         // --- CONFIGURACIÓN DEL PLAN ---
         const planConfig = {
@@ -164,9 +130,6 @@
         };
         
         document.addEventListener('DOMContentLoaded', () => {
-            // ---- MÉTODO 1: Cargar JSON incrustado (método actual por defecto) ----
-            //const data = JSON.parse(document.getElementById('planData').textContent);
-            //initializeDashboard(data);
 
             // ---- MÉTODO 2: Cargar JSON desde un archivo externo ----
             // Para usar este método, comenta las 2 líneas de arriba y descomenta las siguientes:
