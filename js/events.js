@@ -44,3 +44,24 @@ export function setupProjectFilters() {
         });
     });
 }
+
+export function setupTimelineViewEvents() {
+    const timelineContainer = document.getElementById('timeline-interactive-container');
+    if (!timelineContainer) return;
+
+    timelineContainer.addEventListener('click', (event) => {
+        const header = event.target.closest('.timeline-stage-header');
+        if (!header) return;
+
+        const stageId = header.dataset.stageId;
+        if (!stageId) return;
+
+        const detailsElements = timelineContainer.querySelectorAll(`[data-details-for="${stageId}"]`);
+        detailsElements.forEach(el => el.classList.toggle('hidden'));
+
+        const icon = header.querySelector('svg');
+        if (icon) {
+            icon.classList.toggle('rotate-90');
+        }
+    });
+}

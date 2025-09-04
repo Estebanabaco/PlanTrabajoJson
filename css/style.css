@@ -1,37 +1,66 @@
+/* Definición de los colores corporativos de ABACO para un uso fácil */
+:root {
+    --abaco-verde-lima: #D2DE38;
+    --abaco-naranja: #F58634;
+    --abaco-verde-hoja: #00A859;
+    --abaco-gris-texto: #5B5B5B;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--abaco-gris-texto);
+}
+.task-card {
+    transition: all 0.2s ease-in-out;
+}
+.stage-details, .project-details {
+        transition: all 0.3s ease-in-out;
+}
+.project-header {
+    cursor: pointer;
+}
+/* Estilos para el nuevo calendario */
+.calendar-task-theoretical {
+    border-style: dashed;
+}
+/* Estilos para los filtros de proyectos */
+.project-filter-btn {
+    padding: 8px 16px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+.project-filter-btn.active {
+    border-bottom-color: var(--abaco-verde-hoja);
+    color: var(--abaco-verde-hoja);
+    font-weight: 600;
+}
 
-        /* Definición de los colores corporativos de ABACO para un uso fácil */
-        :root {
-            --abaco-verde-lima: #D2DE38;
-            --abaco-naranja: #F58634;
-            --abaco-verde-hoja: #00A859;
-            --abaco-gris-texto: #5B5B5B;
-        }
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--abaco-gris-texto);
-        }
-        .task-card {
-            transition: all 0.2s ease-in-out;
-        }
-        .stage-details, .project-details {
-             transition: all 0.3s ease-in-out;
-        }
-        .project-header {
-            cursor: pointer;
-        }
-        /* Estilos para el nuevo calendario */
-        .calendar-task-theoretical {
-            border-style: dashed;
-        }
-        /* Estilos para los filtros de proyectos */
-        .project-filter-btn {
-            padding: 8px 16px;
-            border-bottom: 3px solid transparent;
-            transition: all 0.2s ease-in-out;
-        }
-        .project-filter-btn.active {
-            border-bottom-color: var(--abaco-verde-hoja);
-            color: var(--abaco-verde-hoja);
-            font-weight: 600;
-        }
-    
+/* Estilos para el Popover de Hitos en la Línea de Tiempo */
+.milestone-container {
+    position: absolute;
+    z-index: 40; /* Z-index alto para el contenedor del hito */
+}
+
+.milestone-container .milestone-popover {
+    display: none;
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--abaco-gris-texto);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    width: 200px;
+    text-align: center;
+    z-index: 50; /* Z-index MÁXIMO para el popover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.milestone-container:hover .milestone-popover {
+    display: block;
+    opacity: 1;
+}
