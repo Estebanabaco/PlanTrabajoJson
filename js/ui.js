@@ -110,7 +110,7 @@ export function renderTimelineView() {
 
     let timelineGridRows = '';
     projectsData.forEach(project => {
-        timelineGridRows += `<div class="p-2 bg-gray-200 font-bold border-b text-base sticky top-[68px] z-20">${project.projectName}</div>`;
+        timelineGridRows += `<div class="p-2 bg-gray-200 font-bold border-b text-base">${project.projectName}</div>`;
         project.stages.forEach(stage => {
             const stageId = `${project.projectName}-${stage.stageName}`.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '');
             const stageStartOffset = (stage.startDate - timelineStartDate) / (1000 * 60 * 60 * 24);
@@ -123,8 +123,7 @@ export function renderTimelineView() {
                 const taskEndOffset = (task.endDate - timelineStartDate) / (1000 * 60 * 60 * 24);
                 const milestoneLeft = ((taskEndOffset - stageStartOffset) / stageDuration) * 100;
                 milestonesHtml += `
-                    <div class="milestone-container z-40" style="left: ${milestoneLeft}%;">
-
+                    <div class="milestone-container" style="left: ${milestoneLeft}%;">
                         <div class="w-3 h-3 bg-[#F58634] rounded-full border-2 border-white"></div>
                         <div class="milestone-popover">${task.descripcion}</div>
                     </div>
@@ -132,12 +131,12 @@ export function renderTimelineView() {
             });
 
             timelineGridRows += `
-                <div class="flex timeline-stage-header cursor-pointer" data-stage-id="${stageId}">
-                    <div class="w-[250px] p-2 border-b border-r text-sm font-semibold sticky left-0 bg-white z-10 flex items-center">
+                <div class="flex timeline-stage-header cursor-pointer border-b border-gray-200" data-stage-id="${stageId}">
+                    <div class="w-[250px] p-2 border-r text-sm font-semibold bg-white flex items-center">
                          <svg class="w-4 h-4 mr-2 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                          ${stage.stageName}
                     </div>
-                    <div class="flex-1 relative border-b border-r h-10">
+                    <div class="flex-1 relative border-r h-10">
                         <div class="absolute top-1/2 -translate-y-1/2 h-5 rounded bg-blue-300" style="left: ${stageLeft}%; width: ${stageWidth}%;">
                             ${milestonesHtml}
                         </div>
@@ -154,7 +153,7 @@ export function renderTimelineView() {
 
                 detailsContainerHtml += `
                     <div class="flex">
-                        <div class="w-[250px] p-2 border-b border-r text-xs text-gray-600 whitespace-normal break-words sticky left-0 bg-gray-50 z-10 flex items-center pl-10">${task.descripcion}</div>
+                        <div class="w-[250px] p-2 border-b border-r text-xs text-gray-600 whitespace-normal break-words bg-gray-50 flex items-center pl-10">${task.descripcion}</div>
                         <div class="flex-1 relative border-b border-r h-10">
                             <div class="absolute top-1/2 -translate-y-1/2 h-3 rounded ${getTimelineBarColor(task.estado)}" style="left: ${taskLeft}%; width: ${taskWidth}%;"></div>
                         </div>
