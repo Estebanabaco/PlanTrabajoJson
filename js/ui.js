@@ -3,13 +3,16 @@ import { appState, planConfig } from './state.js';
 function getStatusColor(status) { const ls = status.toLowerCase(); if (ls.includes('proceso')) return 'bg-[var(--abaco-verde-lima)] text-[var(--abaco-gris-texto)]'; if (ls.includes('finalizado')) return 'bg-[var(--abaco-verde-hoja)] text-white'; if (ls.includes('iniciado')) return 'bg-[var(--abaco-naranja)] bg-opacity-50 text-[var(--abaco-gris-texto)]'; return 'bg-gray-200 text-gray-800'; }
 function getTimelineBarColor(status) {
     const ls = status.toLowerCase();
-    if (ls.includes('proceso') || ls.includes('iniciado')) {
-        return 'bg-[#D2DE38]'; // Verde Lima ABACO
-    }
     if (ls.includes('finalizado')) {
-        return 'bg-[#00A859]'; // Verde Hoja ABACO
+        return 'bg-[#00A859]'; // Verde Hoja
     }
-    return 'bg-gray-400'; // Gris Medio
+    if (ls.includes('proceso') || ls.includes('iniciado')) {
+        return 'bg-[#D2DE38]'; // Verde Lima
+    }
+    if (ls.includes('no iniciado')) {
+        return 'bg-gray-300'; // Gris opaco
+    }
+    return 'bg-gray-400'; // Gris por defecto
 }
 function getDeviationBadge(days) { if (days > 0) return `<span class="px-3 py-1 text-sm font-semibold rounded-full bg-[var(--abaco-naranja)] text-white w-full text-center md:w-auto">${days} día${days > 1 ? 's' : ''} de desvío</span>`; if (days < 0) return `<span class="px-3 py-1 text-sm font-semibold rounded-full bg-[var(--abaco-verde-hoja)] text-white w-full text-center md:w-auto">${Math.abs(days)} día${Math.abs(days) > 1 ? 's' : ''} de adelanto</span>`; return `<span class="px-3 py-1 text-sm font-semibold rounded-full bg-gray-200 text-gray-800 w-full text-center md:w-auto">A tiempo</span>`; }
 const getWeekNumber = (d) => {
@@ -118,17 +121,36 @@ export function renderTimelineView() {
             const stageLeft = (stageStartOffset / totalDays) * 100;
             const stageWidth = (stageDuration / totalDays) * 100;
 
-            let milestonesHtml = '';
-            stage.tasks.forEach(task => {
-                const taskEndOffset = (task.endDate - timelineStartDate) / (1000 * 60 * 60 * 24);
-                const milestoneLeft = ((taskEndOffset - stageStartOffset) / stageDuration) * 100;
-                milestonesHtml += `
-                    <div class="milestone-container" style="left: ${milestoneLeft}%;">
-                        <div class="w-3 h-3 bg-[#F58634] rounded-full border-2 border-white"></div>
-                        <div class="milestone-popover">${task.descripcion}</div>
+            // Milestone Clustering Logic
+            const milestones = stage.tasks.map(task => ({
+                task,
+                position: ((task.endDate - timelineStartDate) / (1000 * 60 * 60 * 24) / totalDays) * 100
+            })).sort((a, b) => a.position - b.position);
+
+            const clusters = [];
+            let currentCluster = null;
+            const CLUSTER_THRESHOLD = 1.5; // % de la anchura total
+
+            for (const milestone of milestones) {
+                if (currentCluster && (milestone.position - currentCluster.position < CLUSTER_THRESHOLD)) {
+                    currentCluster.tasks.push(milestone.task);
+                } else {
+                    currentCluster = { tasks: [milestone.task], position: milestone.position };
+                    clusters.push(currentCluster);
+                }
+            }
+
+            let milestonesHtml = clusters.map(cluster => {
+                const popoverContent = cluster.tasks.length > 1 ? `<ul>${cluster.tasks.map(t => `<li>${t.descripcion}</li>`).join('')}</ul>` : cluster.tasks[0].descripcion;
+                const clusterIcon = cluster.tasks.length > 1 ? `<div class="w-5 h-5 bg-purple-500 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-bold">${cluster.tasks.length}</div>` : `<div class="w-3 h-3 bg-[#F58634] rounded-full border-2 border-white"></div>`;
+                
+                return `
+                    <div class="milestone-container" style="left: ${cluster.position}%;">
+                        ${clusterIcon}
+                        <div class="milestone-popover-content">${popoverContent}</div>
                     </div>
                 `;
-            });
+            }).join('');
 
             timelineGridRows += `
                 <div class="flex timeline-stage-header cursor-pointer border-b border-gray-200" data-stage-id="${stageId}">

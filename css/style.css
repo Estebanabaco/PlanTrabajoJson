@@ -35,32 +35,28 @@ body {
 }
 
 /* Estilos para el Popover de Hitos en la Línea de Tiempo */
-.milestone-container {
-    position: absolute;
-    z-index: 40; /* Z-index alto para el contenedor del hito */
+.milestone-popover-content {
+    display: none; /* Oculto por defecto, solo sirve como plantilla de contenido */
 }
 
-.milestone-container .milestone-popover {
-    display: none;
+#timeline-popover {
     position: absolute;
-    bottom: 150%;
-    left: 50%;
-    transform: translateX(-50%);
     background-color: var(--abaco-gris-texto);
     color: white;
     padding: 8px 12px;
     border-radius: 6px;
     font-size: 12px;
-    width: 200px;
+    width: 220px;
     text-align: center;
-    z-index: 50; /* Z-index MÁXIMO para el popover */
+    z-index: 100; /* Z-index máximo para estar por encima de todo */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    pointer-events: none; /* Para que no interfiera con otros eventos del ratón */
     opacity: 0;
-    pointer-events: none;
     transition: opacity 0.2s ease-in-out;
 }
 
-.milestone-container:hover .milestone-popover {
-    display: block;
-    opacity: 1;
+/* Estilos para los Hitos en la Línea de Tiempo */
+.milestone-container {
+    position: absolute;
+    transform: translateX(-50%); /* Centra el hito respecto a su posición 'left' */
 }

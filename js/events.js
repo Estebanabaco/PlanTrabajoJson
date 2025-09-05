@@ -56,12 +56,71 @@ export function setupTimelineViewEvents() {
         const stageId = header.dataset.stageId;
         if (!stageId) return;
 
-        const detailsElements = timelineContainer.querySelectorAll(`[data-details-for="${stageId}"]`);
+        const detailsElements = document.querySelectorAll(`[data-details-for="${stageId}"]`);
         detailsElements.forEach(el => el.classList.toggle('hidden'));
 
         const icon = header.querySelector('svg');
         if (icon) {
             icon.classList.toggle('rotate-90');
+        }
+    });
+}
+
+export function setupPopoverEvents() {
+    const timelineContainer = document.getElementById('timeline-interactive-container');
+    if (!timelineContainer) return;
+
+    let popoverTimeout;
+
+    timelineContainer.addEventListener('mouseover', (event) => {
+        const milestone = event.target.closest('.milestone-container');
+        if (!milestone) return;
+
+        const popoverContent = milestone.querySelector('.milestone-popover-content');
+        if (!popoverContent) return;
+
+        clearTimeout(popoverTimeout);
+
+        let popover = document.getElementById('timeline-popover');
+        if (!popover) {
+            popover = document.createElement('div');
+            popover.id = 'timeline-popover';
+            document.body.appendChild(popover);
+        }
+
+        popover.innerHTML = popoverContent.innerHTML;
+
+        const milestoneRect = milestone.getBoundingClientRect();
+        popover.style.left = `${milestoneRect.left + window.scrollX + milestoneRect.width / 2 - popover.offsetWidth / 2}px`;
+        popover.style.top = `${milestoneRect.top + window.scrollY - popover.offsetHeight - 5}px`; // 5px buffer
+        
+        popover.style.opacity = '1';
+    });
+
+    timelineContainer.addEventListener('mouseout', (event) => {
+        const milestone = event.target.closest('.milestone-container');
+        if (!milestone) return;
+
+        popoverTimeout = setTimeout(() => {
+            const popover = document.getElementById('timeline-popover');
+            if (popover) {
+                popover.style.opacity = '0';
+            }
+        }, 200); // A small delay to prevent flickering when moving between milestone and popover
+    });
+
+    // Also hide popover if mouse moves over it and then out
+    document.body.addEventListener('mouseover', (event) => {
+        if (event.target.id === 'timeline-popover') {
+            clearTimeout(popoverTimeout);
+        }
+    });
+     document.body.addEventListener('mouseout', (event) => {
+        if (event.target.id === 'timeline-popover') {
+            const popover = document.getElementById('timeline-popover');
+            if (popover) {
+                popover.style.opacity = '0';
+            }
         }
     });
 }

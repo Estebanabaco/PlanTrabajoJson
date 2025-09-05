@@ -1,7 +1,7 @@
 import { fetchPlanData } from './api.js';
 import { calculateAndScheduleTasks } from './calculations.js';
 import { renderHeader, renderSummary, renderProjects, renderTimelineView, renderCalendar } from './ui.js';
-import { setupViewToggles, setupProjectFilters, setupTimelineViewEvents } from './events.js';
+import { setupViewToggles, setupProjectFilters, setupTimelineViewEvents, setupPopoverEvents } from './events.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
     const data = await fetchPlanData();
@@ -21,4 +21,5 @@ function initializeDashboard(data) {
     setupViewToggles();
     setupProjectFilters();
     setupTimelineViewEvents();
+    setupPopoverEvents();
 }
