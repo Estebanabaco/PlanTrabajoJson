@@ -1,5 +1,5 @@
 {
-  "ultimaActualizacion": "2025-09-05T14:00:22.524Z",
+  "ultimaActualizacion": "2025-09-05T20:12:52.399Z",
   "proyectos": [
     {
       "idProyecto": "25P01",
@@ -16,157 +16,157 @@
           "notas": "",
           "tareas": [
             {
+              "orden": 1,
               "idTarea": "25P01T01T01",
               "descripcion": "Replicar Ajuste Cali",
               "estimacionDias": 0.3,
               "estado": "Finalizado",
               "fechaEntrega": "2025-09-03",
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": "2025-09-03"
             },
             {
+              "orden": 2,
               "idTarea": "25P01T01T02",
               "descripcion": "Replicar Ajuste Pasto",
               "estimacionDias": 0.3,
               "estado": "Finalizado",
               "fechaEntrega": "2025-09-03",
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": "2025-09-03"
             },
             {
+              "orden": 3,
               "idTarea": "25P01T01T03",
               "descripcion": "Replicar Ajuste Pereira",
               "estimacionDias": 0.3,
               "estado": "Finalizado",
               "fechaEntrega": "2025-09-03",
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": "2025-09-03"
             },
             {
+              "orden": 4,
               "idTarea": "25P01T01T04",
               "descripcion": "Replicar Ajuste Cucuta",
               "estimacionDias": 0.3,
               "estado": "Finalizado",
               "fechaEntrega": "2025-09-04",
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": "2025-09-04"
             },
             {
+              "orden": 6,
               "idTarea": "25P01T01T05",
               "descripcion": "Replicar Ajuste Manizales",
               "estimacionDias": 0.3,
               "estado": "Finalizado",
               "fechaEntrega": "2025-09-04",
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": "2025-09-04"
             },
             {
+              "orden": 7,
               "idTarea": "25P01T01T06",
               "descripcion": "Replicar Ajuste Zipaquira",
               "estimacionDias": 0.3,
               "estado": "Finalizado",
               "fechaEntrega": "2025-09-04",
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": "2025-09-04"
             },
             {
+              "orden": 8,
               "idTarea": "25P01T01T07",
               "descripcion": "Replicar Ajuste Cartagena",
               "estimacionDias": 0.3,
               "estado": "Finalizado",
               "fechaEntrega": "2025-09-05",
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": "2025-09-05"
             },
             {
+              "orden": 9,
               "idTarea": "25P01T01T08",
               "descripcion": "Replicar Ajuste Santa Marta",
               "estimacionDias": 0.3,
               "estado": "En proceso",
               "fechaEntrega": "2025-09-05",
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": "2025-09-05"
             },
             {
+              "orden": 10,
               "idTarea": "25P01T01T09",
               "descripcion": "Replicar Ajuste Medellín",
               "estimacionDias": 0.3,
               "estado": "En proceso",
-              "fechaEntrega": null,
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaEntrega": "2025-09-05",
+              "fechaInicialEntrega": "2025-09-05"
             },
             {
+              "orden": 15,
               "idTarea": "25P01T01T10",
               "descripcion": "Replicar Ajuste Armenia",
               "estimacionDias": 0.3,
               "estado": "En proceso",
               "fechaEntrega": null,
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": null
             },
             {
+              "orden": 16,
               "idTarea": "25P01T01T11",
               "descripcion": "Replicar Ajuste Neiva",
               "estimacionDias": 0.3,
               "estado": "En proceso",
               "fechaEntrega": null,
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": null
             },
             {
+              "orden": 17,
               "idTarea": "25P01T01T12",
               "descripcion": "Replicar Ajuste Barranquilla",
               "estimacionDias": 0.3,
               "estado": "En proceso",
               "fechaEntrega": null,
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": null
             },
             {
+              "orden": 18,
               "idTarea": "25P01T01T13",
               "descripcion": "Replicar Ajuste Cartago",
               "estimacionDias": 0.3,
               "estado": "En proceso",
               "fechaEntrega": null,
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": null
             },
             {
+              "orden": 19,
               "idTarea": "25P01T01T14",
               "descripcion": "Replicar Ajuste San Andres",
               "estimacionDias": 0.3,
               "estado": "En proceso",
               "fechaEntrega": null,
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": null
             },
             {
+              "orden": 20,
               "idTarea": "25P01T01T15",
               "descripcion": "Crear Nuevo Banco Saciar",
               "estimacionDias": 1,
               "estado": "En proceso",
               "fechaEntrega": null,
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": null
             },
             {
+              "orden": 21,
               "idTarea": "25P01T01T16",
               "descripcion": "Crear Nuevo Banco Uraba",
               "estimacionDias": 1,
               "estado": "En proceso",
               "fechaEntrega": null,
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": null
             },
             {
+              "orden": 22,
               "idTarea": "25P01T01T17",
               "descripcion": "Crear Nuevo Banco Rionegro",
               "estimacionDias": 1,
               "estado": "En proceso",
               "fechaEntrega": null,
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": null
             }
           ]
         }
@@ -187,22 +187,22 @@
           "notas": "Por vacaciones se delega la aprobacion a Eliza",
           "tareas": [
             {
+              "orden": 5,
               "idTarea": "25P02C01T01",
               "descripcion": "Reunion de alineacion para definir necesidad y revisar insumos completos ",
               "estimacionDias": 0.1,
               "estado": "Finalizado",
               "fechaEntrega": "2025-09-04",
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": "2025-09-04"
             },
             {
+              "orden": 13,
               "idTarea": "25P02C01T02",
               "descripcion": "Acompañamiento definir necesidad y revisar insumos completos",
               "estimacionDias": 0.6,
               "estado": "En proceso",
               "fechaEntrega": null,
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": null
             }
           ]
         },
@@ -215,22 +215,22 @@
           "notas": "",
           "tareas": [
             {
+              "orden": 5,
               "idTarea": "25P02C01T01",
               "descripcion": "Reunion de alineacion para definir necesidad y revisar insumos completos ",
               "estimacionDias": 0.1,
               "estado": "Finalizado",
               "fechaEntrega": "2025-09-04",
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": "2025-09-04"
             },
             {
+              "orden": 13,
               "idTarea": "25P02C01T02",
               "descripcion": "Acompañamiento definir necesidad y revisar insumos completos",
               "estimacionDias": 0.6,
               "estado": "En proceso",
               "fechaEntrega": null,
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": null
             }
           ]
         }
@@ -239,7 +239,7 @@
     {
       "idProyecto": "25P03",
       "nombreProyecto": "Sistema de Inventarios",
-      "etapaActual": "Estapa1",
+      "etapaActual": "Etapa1",
       "estadoGeneral": "En Proceso",
       "etapas": [
         {
@@ -284,13 +284,22 @@
           "notas": "",
           "tareas": [
             {
+              "orden": 11,
               "idTarea": "25P05T01T01",
+              "descripcion": "Preparar Entono para desarrollador",
+              "estimacionDias": 1,
+              "estado": "No iniciado",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null
+            },
+            {
+              "orden": 14,
+              "idTarea": "25P05T01T02",
               "descripcion": "Preparar Entono para desarrollador",
               "estimacionDias": 1,
               "estado": "En proceso",
               "fechaEntrega": null,
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": null
             }
           ]
         }
@@ -311,76 +320,103 @@
           "notas": "",
           "tareas": [
             {
+              "orden": 23,
               "idTarea": "25P06M01T01",
               "descripcion": "Categorizar transacciones",
+              "estimacionDias": 1,
+              "estado": "No iniciado",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null
+            },
+            {
+              "orden": 24,
+              "idTarea": "25P06M01T02",
+              "descripcion": "Identificar interacciones manuales",
               "estimacionDias": 2,
               "estado": "No iniciado",
               "fechaEntrega": null,
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": null
             },
             {
-              "idTarea": "25P06M01T02",
-              "descripcion": "Identificar interacciones manuales",
-              "estimacionDias": 3,
-              "estado": "No iniciado",
-              "fechaEntrega": null,
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
-            },
-            {
+              "orden": 25,
               "idTarea": "25P06M01T03",
               "descripcion": "Acciones datos manuales",
               "estimacionDias": 1,
               "estado": "No iniciado",
               "fechaEntrega": null,
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": null
             },
             {
+              "orden": 26,
               "idTarea": "25P06M01T04",
               "descripcion": "Diseñar BD",
-              "estimacionDias": 3,
+              "estimacionDias": 2,
               "estado": "No iniciado",
               "fechaEntrega": null,
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": null
             },
             {
+              "orden": 27,
               "idTarea": "25P06M01T05",
               "descripcion": "Nuevos registros",
               "estimacionDias": 2,
               "estado": "No iniciado",
               "fechaEntrega": null,
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": null
             },
             {
+              "orden": 28,
               "idTarea": "25P06M01T06",
               "descripcion": "Actualizar registros",
-              "estimacionDias": 3,
-              "estado": "No iniciado",
-              "fechaEntrega": null,
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
-            },
-            {
-              "idTarea": "25P06M01T07",
-              "descripcion": "Eliminar registros",
               "estimacionDias": 2,
               "estado": "No iniciado",
               "fechaEntrega": null,
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": null
             },
             {
-              "idTarea": "25P06M01T08",
-              "descripcion": "Cargar historico",
-              "estimacionDias": 5,
+              "orden": 29,
+              "idTarea": "25P06M01T07",
+              "descripcion": "Eliminar registros",
+              "estimacionDias": 1,
               "estado": "No iniciado",
               "fechaEntrega": null,
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
+              "fechaInicialEntrega": null
+            },
+            {
+              "orden": 30,
+              "idTarea": "25P06M01T08",
+              "descripcion": "Cargar historico",
+              "estimacionDias": 2,
+              "estado": "No iniciado",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "idProyecto": "25P07",
+      "nombreProyecto": "Metodologia de levantamiento de requerimientos tecnologicos",
+      "etapaActual": "Diseño1",
+      "estadoGeneral": "No iniciado",
+      "etapas": [
+        {
+          "idEtapa": "25P07T01",
+          "nombreEtapa": "Diseño1",
+          "areaResponsable": "Tecnica",
+          "liderResponsable": "Juan Monsalve",
+          "estadoEtapa": "No iniciado",
+          "notas": "",
+          "tareas": [
+            {
+              "orden": 12,
+              "idTarea": "25P07T01T01",
+              "descripcion": "Redaccion de metodologia",
+              "estimacionDias": 2,
+              "estado": "No iniciado",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null
             }
           ]
         }

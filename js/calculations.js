@@ -1,7 +1,7 @@
 import { planConfig, appState } from './state.js';
 
 export function calculateAndScheduleTasks(projects) {
-    const allTasks = projects.flatMap(p => p.etapas.flatMap(e => e.tareas.map(t => ({...t, projectName: p.nombreProyecto, stageName: e.nombreEtapa}))));
+    const allTasks = projects.flatMap(p => p.etapas.flatMap(e => e.tareas.map(t => ({...t, projectName: p.nombreProyecto, stageName: e.nombreEtapa})))).sort((a, b) => a.orden - b.orden);
     const allBlockedDays = [...planConfig.adminBlockedWeekdays, ...planConfig.weekendBlockedWeekdays];
     
     const parseLocalDate = (dateString) => {
