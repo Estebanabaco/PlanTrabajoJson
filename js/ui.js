@@ -1,6 +1,7 @@
 import { appState, planConfig } from './state.js';
 
 function getStatusColor(status) { const ls = status.toLowerCase(); if (ls.includes('proceso')) return 'bg-[var(--abaco-verde-lima)] text-[var(--abaco-gris-texto)]'; if (ls.includes('finalizado')) return 'bg-[var(--abaco-verde-hoja)] text-white'; if (ls.includes('iniciado')) return 'bg-[var(--abaco-naranja)] bg-opacity-50 text-[var(--abaco-gris-texto)]'; return 'bg-gray-200 text-gray-800'; }
+
 function getTimelineBarColor(status) {
     const ls = status.toLowerCase();
     if (ls.includes('finalizado')) {
@@ -14,7 +15,19 @@ function getTimelineBarColor(status) {
     }
     return 'bg-gray-400'; // Gris por defecto
 }
+
+function getMilestoneColor(task) {
+    if (task.estado.toLowerCase().includes('finalizado')) {
+        return 'bg-[var(--abaco-verde-hoja)]';
+    }
+    if (task.fechaEntrega === null) {
+        return 'bg-gray-400';
+    }
+    return 'bg-[var(--abaco-naranja)]';
+}
+
 function getDeviationBadge(days) { if (days > 0) return `<span class="px-3 py-1 text-sm font-semibold rounded-full bg-[var(--abaco-naranja)] text-white w-full text-center md:w-auto">${days} día${days > 1 ? 's' : ''} de desvío</span>`; if (days < 0) return `<span class="px-3 py-1 text-sm font-semibold rounded-full bg-[var(--abaco-verde-hoja)] text-white w-full text-center md:w-auto">${Math.abs(days)} día${Math.abs(days) > 1 ? 's' : ''} de adelanto</span>`; return `<span class="px-3 py-1 text-sm font-semibold rounded-full bg-gray-200 text-gray-800 w-full text-center md:w-auto">A tiempo</span>`; }
+
 const getWeekNumber = (d) => {
     d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
     d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
@@ -22,6 +35,7 @@ const getWeekNumber = (d) => {
     const weekNo = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
     return weekNo;
 };
+
 function formatEstimation(days) {
     if (days < 1) {
         const hours = days * 9;
@@ -141,8 +155,10 @@ export function renderTimelineView() {
             }
 
             let milestonesHtml = clusters.map(cluster => {
-                const popoverContent = cluster.tasks.length > 1 ? `<ul>${cluster.tasks.map(t => `<li>${t.descripcion}</li>`).join('')}</ul>` : cluster.tasks[0].descripcion;
-                const clusterIcon = cluster.tasks.length > 1 ? `<div class="w-5 h-5 bg-purple-500 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-bold">${cluster.tasks.length}</div>` : `<div class="w-3 h-3 bg-[#F58634] rounded-full border-2 border-white"></div>`;
+                const popoverContent = cluster.tasks.length > 1
+                    ? `<h4 class="font-bold mb-2 text-sm text-center">Hitos Agrupados (${cluster.tasks.length})</h4><ul class="space-y-1">${cluster.tasks.map(t => `<li class="flex items-start"><div class="w-2 h-2 ${getMilestoneColor(t)} rounded-full mr-2 mt-1 flex-shrink-0"></div><span class="text-xs text-left">${t.descripcion}</span></li>`).join('')}</ul>`
+                    : `<div class="flex items-start"><div class="w-2 h-2 ${getMilestoneColor(cluster.tasks[0])} rounded-full mr-2 mt-1 flex-shrink-0"></div><span class="text-xs text-left">${cluster.tasks[0].descripcion}</span></div>`;
+                const clusterIcon = cluster.tasks.length > 1 ? `<div class="w-5 h-5 bg-purple-500 rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-bold">${cluster.tasks.length}</div>` : `<div class="w-3 h-3 ${getMilestoneColor(cluster.tasks[0])} rounded-full border-2 border-white"></div>`;
                 
                 return `
                     <div class="milestone-container" style="left: ${cluster.position}%;">

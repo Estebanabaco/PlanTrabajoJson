@@ -1,5 +1,5 @@
 {
-  "ultimaActualizacion": "2025-09-03T18:23:31.996Z",
+  "ultimaActualizacion": "2025-09-05T14:00:22.524Z",
   "proyectos": [
     {
       "idProyecto": "25P01",
@@ -19,7 +19,7 @@
               "idTarea": "25P01T01T01",
               "descripcion": "Replicar Ajuste Cali",
               "estimacionDias": 0.3,
-              "estado": "En proceso",
+              "estado": "Finalizado",
               "fechaEntrega": "2025-09-03",
               "fechaInicialEntrega": null,
               "diasDesvio": 0
@@ -28,7 +28,7 @@
               "idTarea": "25P01T01T02",
               "descripcion": "Replicar Ajuste Pasto",
               "estimacionDias": 0.3,
-              "estado": "En proceso",
+              "estado": "Finalizado",
               "fechaEntrega": "2025-09-03",
               "fechaInicialEntrega": null,
               "diasDesvio": 0
@@ -37,7 +37,7 @@
               "idTarea": "25P01T01T03",
               "descripcion": "Replicar Ajuste Pereira",
               "estimacionDias": 0.3,
-              "estado": "En proceso",
+              "estado": "Finalizado",
               "fechaEntrega": "2025-09-03",
               "fechaInicialEntrega": null,
               "diasDesvio": 0
@@ -46,49 +46,49 @@
               "idTarea": "25P01T01T04",
               "descripcion": "Replicar Ajuste Cucuta",
               "estimacionDias": 0.3,
-              "estado": "En proceso",
+              "estado": "Finalizado",
+              "fechaEntrega": "2025-09-04",
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P01T01T05",
+              "descripcion": "Replicar Ajuste Manizales",
+              "estimacionDias": 0.3,
+              "estado": "Finalizado",
+              "fechaEntrega": "2025-09-04",
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P01T01T06",
+              "descripcion": "Replicar Ajuste Zipaquira",
+              "estimacionDias": 0.3,
+              "estado": "Finalizado",
               "fechaEntrega": "2025-09-04",
               "fechaInicialEntrega": null,
               "diasDesvio": 0
             },
             {
               "idTarea": "25P01T01T07",
-              "descripcion": "Replicar Ajuste Manizales",
+              "descripcion": "Replicar Ajuste Cartagena",
               "estimacionDias": 0.3,
-              "estado": "En proceso",
-              "fechaEntrega": null,
+              "estado": "Finalizado",
+              "fechaEntrega": "2025-09-05",
               "fechaInicialEntrega": null,
               "diasDesvio": 0
             },
             {
               "idTarea": "25P01T01T08",
-              "descripcion": "Replicar Ajuste Zipaquira",
+              "descripcion": "Replicar Ajuste Santa Marta",
               "estimacionDias": 0.3,
               "estado": "En proceso",
-              "fechaEntrega": null,
+              "fechaEntrega": "2025-09-05",
               "fechaInicialEntrega": null,
               "diasDesvio": 0
             },
             {
               "idTarea": "25P01T01T09",
-              "descripcion": "Replicar Ajuste Cartagena",
-              "estimacionDias": 0.3,
-              "estado": "En proceso",
-              "fechaEntrega": null,
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
-            },
-            {
-              "idTarea": "25P01T01T10",
-              "descripcion": "Replicar Ajuste Santa Marta",
-              "estimacionDias": 0.3,
-              "estado": "En proceso",
-              "fechaEntrega": null,
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
-            },
-            {
-              "idTarea": "25P01T01T11",
               "descripcion": "Replicar Ajuste Medellín",
               "estimacionDias": 0.3,
               "estado": "En proceso",
@@ -97,7 +97,7 @@
               "diasDesvio": 0
             },
             {
-              "idTarea": "25P01T01T12",
+              "idTarea": "25P01T01T10",
               "descripcion": "Replicar Ajuste Armenia",
               "estimacionDias": 0.3,
               "estado": "En proceso",
@@ -106,7 +106,7 @@
               "diasDesvio": 0
             },
             {
-              "idTarea": "25P01T01T13",
+              "idTarea": "25P01T01T11",
               "descripcion": "Replicar Ajuste Neiva",
               "estimacionDias": 0.3,
               "estado": "En proceso",
@@ -115,7 +115,7 @@
               "diasDesvio": 0
             },
             {
-              "idTarea": "25P01T01T14",
+              "idTarea": "25P01T01T12",
               "descripcion": "Replicar Ajuste Barranquilla",
               "estimacionDias": 0.3,
               "estado": "En proceso",
@@ -124,7 +124,7 @@
               "diasDesvio": 0
             },
             {
-              "idTarea": "25P01T01T15",
+              "idTarea": "25P01T01T13",
               "descripcion": "Replicar Ajuste Cartago",
               "estimacionDias": 0.3,
               "estado": "En proceso",
@@ -133,7 +133,7 @@
               "diasDesvio": 0
             },
             {
-              "idTarea": "25P01T01T16",
+              "idTarea": "25P01T01T14",
               "descripcion": "Replicar Ajuste San Andres",
               "estimacionDias": 0.3,
               "estado": "En proceso",
@@ -142,7 +142,7 @@
               "diasDesvio": 0
             },
             {
-              "idTarea": "25P01T01T17",
+              "idTarea": "25P01T01T15",
               "descripcion": "Crear Nuevo Banco Saciar",
               "estimacionDias": 1,
               "estado": "En proceso",
@@ -151,7 +151,7 @@
               "diasDesvio": 0
             },
             {
-              "idTarea": "25P01T01T18",
+              "idTarea": "25P01T01T16",
               "descripcion": "Crear Nuevo Banco Uraba",
               "estimacionDias": 1,
               "estado": "En proceso",
@@ -160,7 +160,7 @@
               "diasDesvio": 0
             },
             {
-              "idTarea": "25P01T01T19",
+              "idTarea": "25P01T01T17",
               "descripcion": "Crear Nuevo Banco Rionegro",
               "estimacionDias": 1,
               "estado": "En proceso",
@@ -184,14 +184,23 @@
           "areaResponsable": "Contable",
           "liderResponsable": "Ingrid Broun",
           "estadoEtapa": "FInalizado P Garantia",
-          "notas": "Por vacaciones delego la aprobacion a Eliza",
+          "notas": "Por vacaciones se delega la aprobacion a Eliza",
           "tareas": [
             {
-              "idTarea": "25P02C01T05",
-              "descripcion": "Acompañamiento definir necesidad y revisar insumos completos",
-              "estimacionDias": 0.7,
-              "estado": "No iniciado",
+              "idTarea": "25P02C01T01",
+              "descripcion": "Reunion de alineacion para definir necesidad y revisar insumos completos ",
+              "estimacionDias": 0.1,
+              "estado": "Finalizado",
               "fechaEntrega": "2025-09-04",
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P02C01T02",
+              "descripcion": "Acompañamiento definir necesidad y revisar insumos completos",
+              "estimacionDias": 0.6,
+              "estado": "En proceso",
+              "fechaEntrega": null,
               "fechaInicialEntrega": null,
               "diasDesvio": 0
             }
@@ -206,11 +215,20 @@
           "notas": "",
           "tareas": [
             {
-              "idTarea": "25P02C01T05",
-              "descripcion": "Acompañamiento definir necesidad y revisar insumos completos",
-              "estimacionDias": 0.7,
-              "estado": "No iniciado",
+              "idTarea": "25P02C01T01",
+              "descripcion": "Reunion de alineacion para definir necesidad y revisar insumos completos ",
+              "estimacionDias": 0.1,
+              "estado": "Finalizado",
               "fechaEntrega": "2025-09-04",
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P02C01T02",
+              "descripcion": "Acompañamiento definir necesidad y revisar insumos completos",
+              "estimacionDias": 0.6,
+              "estado": "En proceso",
+              "fechaEntrega": null,
               "fechaInicialEntrega": null,
               "diasDesvio": 0
             }
@@ -231,17 +249,7 @@
           "liderResponsable": "Diana Henao",
           "estadoEtapa": "FInalizado P Garantia",
           "notas": "",
-          "tareas": [
-            {
-              "idTarea": "25P03T01T06",
-              "descripcion": "Preparar Entono para desarrollador",
-              "estimacionDias": 1,
-              "estado": "No iniciado",
-              "fechaEntrega": "2025-09-05",
-              "fechaInicialEntrega": null,
-              "diasDesvio": 0
-            }
-          ]
+          "tareas": []
         },
         {
           "idEtapa": "25P03T02",
@@ -274,7 +282,107 @@
           "liderResponsable": "Ingrid Broun",
           "estadoEtapa": "No iniciado",
           "notas": "",
-          "tareas": []
+          "tareas": [
+            {
+              "idTarea": "25P05T01T01",
+              "descripcion": "Preparar Entono para desarrollador",
+              "estimacionDias": 1,
+              "estado": "En proceso",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "idProyecto": "25P06",
+      "nombreProyecto": "Visor Afrus resguardo y datos autonomos",
+      "etapaActual": "Etapa1",
+      "estadoGeneral": "No Iniciado",
+      "etapas": [
+        {
+          "idEtapa": "25P06M01",
+          "nombreEtapa": "Etapa1",
+          "areaResponsable": "Mercadeo",
+          "liderResponsable": "Eliza Giraldo",
+          "estadoEtapa": "No iniciado",
+          "notas": "",
+          "tareas": [
+            {
+              "idTarea": "25P06M01T01",
+              "descripcion": "Categorizar transacciones",
+              "estimacionDias": 2,
+              "estado": "No iniciado",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P06M01T02",
+              "descripcion": "Identificar interacciones manuales",
+              "estimacionDias": 3,
+              "estado": "No iniciado",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P06M01T03",
+              "descripcion": "Acciones datos manuales",
+              "estimacionDias": 1,
+              "estado": "No iniciado",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P06M01T04",
+              "descripcion": "Diseñar BD",
+              "estimacionDias": 3,
+              "estado": "No iniciado",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P06M01T05",
+              "descripcion": "Nuevos registros",
+              "estimacionDias": 2,
+              "estado": "No iniciado",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P06M01T06",
+              "descripcion": "Actualizar registros",
+              "estimacionDias": 3,
+              "estado": "No iniciado",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P06M01T07",
+              "descripcion": "Eliminar registros",
+              "estimacionDias": 2,
+              "estado": "No iniciado",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            },
+            {
+              "idTarea": "25P06M01T08",
+              "descripcion": "Cargar historico",
+              "estimacionDias": 5,
+              "estado": "No iniciado",
+              "fechaEntrega": null,
+              "fechaInicialEntrega": null,
+              "diasDesvio": 0
+            }
+          ]
         }
       ]
     }

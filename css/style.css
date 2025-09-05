@@ -47,7 +47,7 @@ body {
     border-radius: 6px;
     font-size: 12px;
     width: 220px;
-    text-align: center;
+    text-align: left;
     z-index: 100; /* Z-index máximo para estar por encima de todo */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     pointer-events: none; /* Para que no interfiera con otros eventos del ratón */
