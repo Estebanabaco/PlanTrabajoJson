@@ -14,7 +14,16 @@ export function calculateAndScheduleTasks(projects) {
         const nextDay = new Date(date);
         do {
             nextDay.setDate(nextDay.getDate() + 1);
-        } while (allBlockedDays.includes(nextDay.getDay()));
+        } while (
+            allBlockedDays.includes(nextDay.getDay()) ||
+            (planConfig.blockedDateRanges && planConfig.blockedDateRanges.some(range => {
+                const startParts = range.start.split('-').map(s => parseInt(s, 10));
+                const endParts = range.end.split('-').map(s => parseInt(s, 10));
+                const startDate = new Date(startParts[0], startParts[1] - 1, startParts[2]);
+                const endDate = new Date(endParts[0], endParts[1] - 1, endParts[2]);
+                return nextDay >= startDate && nextDay <= endDate;
+            }))
+        );
         return nextDay;
     }
 

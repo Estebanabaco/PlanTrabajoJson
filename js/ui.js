@@ -26,14 +26,26 @@ function getMilestoneColor(task) {
     return 'bg-[var(--abaco-naranja)]';
 }
 
-function getCalendarTaskColor(task) {
+function getCalendarTaskColorClasses(task) {
     if (task.estado.toLowerCase().includes('finalizado')) {
-        return 'border-[var(--abaco-verde-hoja)] bg-green-50 text-gray-800';
+        return {
+            borderColor: 'var(--abaco-verde-hoja)',
+            bgColor: 'bg-green-50',
+            textColor: 'text-gray-800'
+        };
     }
     if (task.isTheoretical) {
-        return 'calendar-task-theoretical border-gray-400 bg-gray-100';
+        return {
+            borderColor: 'rgb(156 163 175)', // gray-400
+            bgColor: 'bg-gray-100',
+            textColor: ''
+        };
     }
-    return 'border-[var(--abaco-naranja)] bg-orange-50';
+    return {
+        borderColor: 'var(--abaco-naranja)',
+        bgColor: 'bg-orange-50',
+        textColor: ''
+    };
 }
 
 function getDeviationBadge(days) { if (days > 0) return `<span class="px-3 py-1 text-sm font-semibold rounded-full bg-[var(--abaco-naranja)] text-white w-full text-center md:w-auto">${days} día${days > 1 ? 's' : ''} de desvío</span>`; if (days < 0) return `<span class="px-3 py-1 text-sm font-semibold rounded-full bg-[var(--abaco-verde-hoja)] text-white w-full text-center md:w-auto">${Math.abs(days)} día${Math.abs(days) > 1 ? 's' : ''} de adelanto</span>`; return `<span class="px-3 py-1 text-sm font-semibold rounded-full bg-gray-200 text-gray-800 w-full text-center md:w-auto">A tiempo</span>`; }
@@ -323,13 +335,41 @@ export function renderCalendar() {
         if (!isAdminBlocked && !isWeekend && !blockedRange) {
             dayDate.setHours(0, 0, 0, 0);
             const tasksForDay = scheduledTasks.filter(task => {
-                const startDate = new Date(task.startDate);
+                const startDate = new Date(task.startDate.getTime());
                 startDate.setHours(0, 0, 0, 0);
-                const endDate = new Date(task.endDate);
+                const endDate = new Date(task.endDate.getTime());
                 endDate.setHours(0, 0, 0, 0);
                 return dayDate >= startDate && dayDate <= endDate;
             });
-            tasksHtml = tasksForDay.map(task => `<div title="${task.projectName} - ${task.descripcion}" class="p-1 text-xs rounded border-l-4 ${getCalendarTaskColor(task)}"><p class="font-semibold truncate">${task.descripcion}</p><p class="text-gray-500 truncate">${task.projectName}</p></div>`).join('');
+            tasksHtml = tasksForDay.map(task => {
+                const startDate = new Date(task.startDate.getTime());
+                startDate.setHours(0, 0, 0, 0);
+                const endDate = new Date(task.endDate.getTime());
+                endDate.setHours(0, 0, 0, 0);
+
+                const colorClasses = getCalendarTaskColorClasses(task);
+                let taskClasses = `p-1 text-xs ${colorClasses.bgColor} ${colorClasses.textColor}`;
+                let style = '';
+
+                const isMultiDay = startDate.getTime() !== endDate.getTime();
+
+                if (isMultiDay) {
+                    if (dayDate.getTime() === startDate.getTime()) {
+                        taskClasses += ' rounded-l-lg';
+                        style = `border-left: 4px solid ${colorClasses.borderColor};`;
+                    } else if (dayDate.getTime() === endDate.getTime()) {
+                        taskClasses += ' rounded-r-lg';
+                        style = `border-right: 4px solid ${colorClasses.borderColor};`;
+                    } else {
+                        taskClasses += ' rounded-none';
+                    }
+                } else {
+                    taskClasses += ' rounded-lg';
+                    style = `border-left: 4px solid ${colorClasses.borderColor}; border-right: 4px solid ${colorClasses.borderColor};`;
+                }
+
+                return `<div title="${task.projectName} - ${task.descripcion}" class="${taskClasses}" style="${style}"><p class="font-semibold truncate">${task.descripcion}</p><p class="text-gray-500 truncate">${task.projectName}</p></div>`;
+            }).join('');
         }
 
         calendarHtml += `<div class="${dayClasses}" ${dayTitle}><div class="font-bold text-right">${day}</div><div class="space-y-1">${tasksHtml}</div></div>`;
