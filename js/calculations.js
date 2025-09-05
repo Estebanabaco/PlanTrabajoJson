@@ -50,21 +50,48 @@ export function calculateAndScheduleTasks(projects) {
             }
             return { ...task, startDate, endDate, isTheoretical: false };
         } else {
-            const taskEstimation = parseFloat(task.estimacionDias) || 1.0;
-            if (taskEstimation > remainingDayCapacity) {
-                projectionDate = getNextWorkDay(projectionDate);
-                remainingDayCapacity = 1.0;
-            }
-            const calculatedStartDate = new Date(projectionDate);
-            remainingDayCapacity -= taskEstimation;
+            const taskEstimation = parseFloat(task.estimacionDias) || 0;
 
-            let duration = taskEstimation;
-            let calculatedEndDate = new Date(calculatedStartDate);
-             while(duration > 1) {
-                calculatedEndDate = getNextWorkDay(calculatedEndDate);
-                duration--;
+            if (taskEstimation >= 1) {
+                // Task takes 1 day or more.
+                // It cannot start on a partially filled day.
+                if (remainingDayCapacity < 1.0) {
+                    projectionDate = getNextWorkDay(projectionDate);
+                    remainingDayCapacity = 1.0;
+                }
+                
+                const calculatedStartDate = new Date(projectionDate);
+                
+                let duration = taskEstimation;
+                let calculatedEndDate = new Date(calculatedStartDate);
+                while(duration > 1) {
+                    calculatedEndDate = getNextWorkDay(calculatedEndDate);
+                    duration--;
+                }
+                
+                projectionDate = getNextWorkDay(calculatedEndDate);
+                remainingDayCapacity = 1.0;
+
+                return { ...task, startDate: calculatedStartDate, endDate: calculatedEndDate, isTheoretical: true };
+
+            } else {
+                // Task takes less than a day.
+                if (taskEstimation > remainingDayCapacity) {
+                    projectionDate = getNextWorkDay(projectionDate);
+                    remainingDayCapacity = 1.0;
+                }
+                
+                const calculatedStartDate = new Date(projectionDate);
+                const calculatedEndDate = new Date(projectionDate);
+                remainingDayCapacity -= taskEstimation;
+
+                if (remainingDayCapacity < 0.01) {
+                    projectionDate = getNextWorkDay(projectionDate);
+                    remainingDayCapacity = 1.0;
+                }
+
+                return { ...task, startDate: calculatedStartDate, endDate: calculatedEndDate, isTheoretical: true };
             }
-            return { ...task, startDate: calculatedStartDate, endDate: calculatedEndDate, isTheoretical: true };
         }
     });
 }

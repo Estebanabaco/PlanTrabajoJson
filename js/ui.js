@@ -26,6 +26,16 @@ function getMilestoneColor(task) {
     return 'bg-[var(--abaco-naranja)]';
 }
 
+function getCalendarTaskColor(task) {
+    if (task.estado.toLowerCase().includes('finalizado')) {
+        return 'border-[var(--abaco-verde-hoja)] bg-green-50 text-gray-800';
+    }
+    if (task.isTheoretical) {
+        return 'calendar-task-theoretical border-gray-400 bg-gray-100';
+    }
+    return 'border-[var(--abaco-naranja)] bg-orange-50';
+}
+
 function getDeviationBadge(days) { if (days > 0) return `<span class="px-3 py-1 text-sm font-semibold rounded-full bg-[var(--abaco-naranja)] text-white w-full text-center md:w-auto">${days} día${days > 1 ? 's' : ''} de desvío</span>`; if (days < 0) return `<span class="px-3 py-1 text-sm font-semibold rounded-full bg-[var(--abaco-verde-hoja)] text-white w-full text-center md:w-auto">${Math.abs(days)} día${Math.abs(days) > 1 ? 's' : ''} de adelanto</span>`; return `<span class="px-3 py-1 text-sm font-semibold rounded-full bg-gray-200 text-gray-800 w-full text-center md:w-auto">A tiempo</span>`; }
 
 const getWeekNumber = (d) => {
@@ -245,6 +255,7 @@ export function renderCalendar() {
             <div class="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-2 text-xs text-gray-600">
                 <div class="flex items-center" title="${planConfig.blockedDaysReason}"><span class="w-3 h-3 bg-blue-50 border mr-2"></span>Días Administrativos</div>
                 <div class="flex items-center"><span class="w-3 h-3 bg-gray-50 border mr-2"></span>Fin de Semana</div>
+                <div class="flex items-center"><span class="w-3 h-3 bg-green-50 border border-[var(--abaco-verde-hoja)] mr-2"></span>Tarea Finalizada</div>
                 <div class="flex items-center"><span class="w-3 h-3 bg-orange-50 border border-orange-400 mr-2"></span>Fecha Definida</div>
                 <div class="flex items-center"><span class="w-3 h-3 bg-gray-100 border border-dashed border-gray-400 mr-2"></span>Fecha Estimada</div>
             </div>
@@ -281,8 +292,21 @@ export function renderCalendar() {
         if (isWeekend) { dayClasses += ' bg-gray-50'; }
         if (isAdminBlocked) { dayClasses += ' bg-blue-50'; dayTitle = `title="${planConfig.blockedDaysReason}"`; }
         if (isToday) { dayClasses += ' bg-orange-100'; }
-        const tasksForDay = scheduledTasks.filter(task => { const taskDate = task.startDate; return taskDate.getDate() === day && taskDate.getMonth() === month && taskDate.getFullYear() === year; });
-        calendarHtml += `<div class="${dayClasses}" ${dayTitle}><div class="font-bold text-right">${day}</div><div class="space-y-1">${tasksForDay.map(task => `<div title="${task.projectName} - ${task.descripcion}" class="p-1 text-xs rounded border-l-4 ${task.isTheoretical ? 'calendar-task-theoretical border-gray-400 bg-gray-100' : 'border-[var(--abaco-naranja)] bg-orange-50'}"><p class="font-semibold truncate">${task.descripcion}</p><p class="text-gray-500 truncate">${task.projectName}</p></div>`).join('')}</div></div>`;
+        
+        let tasksHtml = '';
+        if (!isAdminBlocked && !isWeekend) {
+            dayDate.setHours(0, 0, 0, 0);
+            const tasksForDay = scheduledTasks.filter(task => {
+                const startDate = new Date(task.startDate);
+                startDate.setHours(0, 0, 0, 0);
+                const endDate = new Date(task.endDate);
+                endDate.setHours(0, 0, 0, 0);
+                return dayDate >= startDate && dayDate <= endDate;
+            });
+            tasksHtml = tasksForDay.map(task => `<div title="${task.projectName} - ${task.descripcion}" class="p-1 text-xs rounded border-l-4 ${getCalendarTaskColor(task)}"><p class="font-semibold truncate">${task.descripcion}</p><p class="text-gray-500 truncate">${task.projectName}</p></div>`).join('');
+        }
+
+        calendarHtml += `<div class="${dayClasses}" ${dayTitle}><div class="font-bold text-right">${day}</div><div class="space-y-1">${tasksHtml}</div></div>`;
     }
     calendarHtml += `</div>`;
     container.innerHTML = calendarHtml;
