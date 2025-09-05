@@ -255,6 +255,7 @@ export function renderCalendar() {
             <div class="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-2 text-xs text-gray-600">
                 <div class="flex items-center" title="${planConfig.blockedDaysReason}"><span class="w-3 h-3 bg-blue-50 border mr-2"></span>Días Administrativos</div>
                 <div class="flex items-center"><span class="w-3 h-3 bg-gray-50 border mr-2"></span>Fin de Semana</div>
+                <div class="flex items-center"><span class="w-3 h-3 bg-red-100 border mr-2"></span>Días Bloqueados</div>
                 <div class="flex items-center"><span class="w-3 h-3 bg-green-50 border border-[var(--abaco-verde-hoja)] mr-2"></span>Tarea Finalizada</div>
                 <div class="flex items-center"><span class="w-3 h-3 bg-orange-50 border border-orange-400 mr-2"></span>Fecha Definida</div>
                 <div class="flex items-center"><span class="w-3 h-3 bg-gray-100 border border-dashed border-gray-400 mr-2"></span>Fecha Estimada</div>
@@ -287,14 +288,39 @@ export function renderCalendar() {
         const isToday = day === new Date().getDate() && month === new Date().getMonth() && year === new Date().getFullYear();
         const isAdminBlocked = planConfig.adminBlockedWeekdays.includes(dayDate.getDay());
         const isWeekend = planConfig.weekendBlockedWeekdays.includes(dayDate.getDay());
+        
+        let blockedRange = null;
+        if (planConfig.blockedDateRanges) {
+            for (const range of planConfig.blockedDateRanges) {
+                const startParts = range.start.split('-').map(s => parseInt(s, 10));
+                const endParts = range.end.split('-').map(s => parseInt(s, 10));
+                const startDate = new Date(startParts[0], startParts[1] - 1, startParts[2]);
+                const endDate = new Date(endParts[0], endParts[1] - 1, endParts[2]);
+
+                if (dayDate >= startDate && dayDate <= endDate) {
+                    blockedRange = range;
+                    break;
+                }
+            }
+        }
+
         let dayClasses = 'border border-gray-200 h-36 p-1 overflow-y-auto';
         let dayTitle = '';
-        if (isWeekend) { dayClasses += ' bg-gray-50'; }
-        if (isAdminBlocked) { dayClasses += ' bg-blue-50'; dayTitle = `title="${planConfig.blockedDaysReason}"`; }
-        if (isToday) { dayClasses += ' bg-orange-100'; }
+        if (blockedRange) {
+            dayClasses += ' bg-red-100';
+            dayTitle = `title="${blockedRange.reason}"`;
+        } else if (isWeekend) { 
+            dayClasses += ' bg-gray-50'; 
+        } else if (isAdminBlocked) { 
+            dayClasses += ' bg-blue-50'; 
+            dayTitle = `title="${planConfig.blockedDaysReason}"`; 
+        }
+        if (isToday) { 
+            dayClasses += ' bg-orange-100'; 
+        }
         
         let tasksHtml = '';
-        if (!isAdminBlocked && !isWeekend) {
+        if (!isAdminBlocked && !isWeekend && !blockedRange) {
             dayDate.setHours(0, 0, 0, 0);
             const tasksForDay = scheduledTasks.filter(task => {
                 const startDate = new Date(task.startDate);
